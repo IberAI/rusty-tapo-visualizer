@@ -1,10 +1,10 @@
 
 const Renderer: React.FC = () => {
   return (
-    <section className="grow">
-      <iframe id="3d-viewer" className="max-h-fit max-w-fit">
+    <section className="flex-grow">
+      <iframe id="3d-viewer" className="h-full w-full" src="/3dviewer.html">
       </iframe>
-    </section>
+    </section> 
   )
 }
 

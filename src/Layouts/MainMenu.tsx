@@ -22,7 +22,7 @@ const MainMenu: React.FC = () =>  {
     fileInputRef.current?.click();  // Safely trigger the click event
   };
   return (
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col space-y-6 resize-y">
       <div id="title-box" className="flex flex-row items-center justify-center">
         <h1 className="text-sunset text-5xl">
           Rusty Tapographic Map Visualizer
