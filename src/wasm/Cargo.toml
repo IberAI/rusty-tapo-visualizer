@@ -1,7 +1,7 @@
 [package]
 name = "wasm"
 version = "0.1.0"
-authors = ["iber <ilteber.dover@gmail.com>"]
+authors = ["Ilteber 'iber' Dover <ilteber.dover@gmail.com>"]
 edition = "2018"
 
 [lib]
