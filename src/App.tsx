@@ -3,7 +3,7 @@ import MainMenu from "./Layouts/MainMenu";
 import Renderer from "./Layouts/Renderer";
 function App() {
   return (
-    <div className="bg-sky">
+    <div className="flex flex-col h-screen bg-sky">
       <MainMenu/>
       <Renderer/>
     </div>
