@@ -13,12 +13,12 @@ dist-ssr
 *.local
 # Rust wasm ignores
 
-wasm/target
+src/wasm/target
 **/*.rs.bk
-wasm/Cargo.lock
-wasm/bin/
-wasm/pkg/
-wasm/wasm-pack.log
+src/wasm/Cargo.lock
+src/wasm/bin/
+src/wasm/pkg/
+src/wasm/wasm-pack.log
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
