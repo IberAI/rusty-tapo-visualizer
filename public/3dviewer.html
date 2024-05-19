@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tapographic Map Renderer</title>
+</head>
+<body style="overflow: hidden;">
+  <canvas id="renderer-root"></canvas>
+  <script type="module">
+    import init, { start } from '../src/wasm/pkg/wasm.js';
+        
+    async function run() {
+      try {
+        await init();
+        start();
+        console.log("HElo im wasm");
+      } catch (error) {
+        console.error("Failed to initialize the WASM module:", error);
+      }
+    }
+    run();
+
+  </script>
+</body>
+</html>
+

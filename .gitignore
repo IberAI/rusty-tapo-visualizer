@@ -11,7 +11,14 @@ node_modules
 dist
 dist-ssr
 *.local
+# Rust wasm ignores
 
+wasm/target
+**/*.rs.bk
+wasm/Cargo.lock
+wasm/bin/
+wasm/pkg/
+wasm/wasm-pack.log
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
