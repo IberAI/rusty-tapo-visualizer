@@ -20,7 +20,25 @@
         console.error("Failed to initialize the WASM module:", error);
       }
     }
-    run();
+
+      // Listen for messages from the parent window
+    window.addEventListener('message', (event) => {
+        // Ensure the message is from the correct origin
+        if (event.origin !== 'http://localhost:5173') {
+            console.error('Invalid origin:', event.origin);
+            return;
+        }
+
+        const message = event.data;
+        if (message.type === 'fileData') {
+            const fileData = new Uint8Array(message.content);
+            console.log('Received file data:', fileData);
+            run();
+            // You can add additional code here to process the file data
+            // For now, we will just log the file data
+        }
+    });
+  
 
   </script>
 </body>
