@@ -14,7 +14,7 @@ dist
 dist-ssr
 *.local
 # Rust wasm ignores
-
+package-lock.json
 src/wasm/target
 **/*.rs.bk
 src/wasm/Cargo.lock
