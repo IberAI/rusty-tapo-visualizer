@@ -10,7 +10,7 @@
 <body style="overflow: hidden;">
   <canvas id="renderer-root"></canvas>
   <script type="module">
-    import init, { start, process_file} from '../src/wasm/pkg/wasm.js';
+    import init, { start, process_file} from './wasm.js';
 
     async function run() {
       try {
@@ -26,7 +26,7 @@
     // Listen for messages from the parent window
     window.addEventListener('message', (event) => {
       // Ensure the message is from the correct origin
-      if (event.origin !== 'http://localhost:5173') {
+      if (event.origin !== 'https://iberai.github.io/rusty-tapo-visualizer/') {
         console.error('Invalid origin:', event.origin);
         return;
       }
