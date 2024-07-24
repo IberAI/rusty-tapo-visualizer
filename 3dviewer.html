@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topographic Map Renderer</title>
+</head>
+<body style="overflow: hidden;">
+  <canvas id="renderer-root"></canvas>
+  <script type="module">
+    import init, { start, process_file} from '../src/wasm/pkg/wasm.js';
+
+    async function run() {
+      try {
+        await init();
+        start();
+        console.log("Hello, I'm wasm");
+
+      } catch (error) {
+        console.error("Failed to initialize the WASM module:", error);
+      }
+    }
+    
+    // Listen for messages from the parent window
+    window.addEventListener('message', (event) => {
+      // Ensure the message is from the correct origin
+      if (event.origin !== 'http://localhost:5173') {
+        console.error('Invalid origin:', event.origin);
+        return;
+      }
+
+      const message = event.data;
+      if (message.type === 'fileData') {
+        const fileData = new Uint8Array(message.content);
+        console.log('Received file data:', fileData);
+        process_file(fileData); 
+        
+       
+      }
+    });
+
+    run();
+  </script>
+</body>
+</html>
+
