@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build-wasm": "cd src/wasm && wasm-pack build --target web --dev",
+    "build-wasm-release": "cd src/wasm && wasm-pack build --target web --release"
     "dev": "vite",
     "build": "tsc && vite build",
     "deploy": "gh-pages -d dist",
