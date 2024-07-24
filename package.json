@@ -31,5 +31,6 @@
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "homepage": "https://your-username.github.io/rusty-tapo-visualizer"
 }

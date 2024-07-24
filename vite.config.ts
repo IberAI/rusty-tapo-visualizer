@@ -27,5 +27,6 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
+  base: '/rusty-tapo-visualizer/', 
 });
 
