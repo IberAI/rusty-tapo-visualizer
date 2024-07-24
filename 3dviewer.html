@@ -25,12 +25,6 @@
     
     // Listen for messages from the parent window
     window.addEventListener('message', (event) => {
-      // Ensure the message is from the correct origin
-      if (event.origin !== 'https://iberai.github.io/') {
-        console.error('Invalid origin:', event.origin);
-        return;
-      }
-
       const message = event.data;
       if (message.type === 'fileData') {
         const fileData = new Uint8Array(message.content);
