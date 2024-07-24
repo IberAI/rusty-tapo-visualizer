@@ -21,6 +21,13 @@ const MainMenu: React.FC = () =>  {
   const handleTryItOutClick = () => {
     fileInputRef.current?.click();  // Safely trigger the click event
   };
+  const handleShowExampleClick = async () => {
+    const response = await fetch("http://www.");
+    const blob = await response.blob();
+    const file = new File([blob], "ExampleGeo.tiff", { type: blob.type });
+    setSelectedFile(file);
+    sendFileToIframe(file, "3d-viewer", "http://localhost:5173/");
+  };
   return (
     <div className="flex flex-col space-y-6 resize-y">
       <div id="title-box" className="flex flex-row items-center justify-center">
@@ -42,7 +49,7 @@ const MainMenu: React.FC = () =>  {
         <div id="Actions" className="flex flex-col w-1/2 items-center justify-center">
           <div id="Buttons" className="flex flex-row space-x-2 text-xl">
             <DefaultButton label="Try It out" onClick={handleTryItOutClick} color="blue" size="medium"/>
-            <DefaultButton label="Show Example" onClick={()=>{}} color="green" size="medium"/>
+            <DefaultButton label="Show Example" onClick={handleShowExampleClick} color="green" size="medium"/>
             <input
             type="file"
             ref={fileInputRef}

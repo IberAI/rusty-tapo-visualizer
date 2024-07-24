@@ -16,6 +16,7 @@ function sendFileToIframe(file: File, iframeId: string, targetOrigin: string): v
                 fileName: file.name,
                 content: event.target.result
             };
+            console.log(message.fileName);
             iframe.contentWindow?.postMessage(message, targetOrigin);
         }
     };
